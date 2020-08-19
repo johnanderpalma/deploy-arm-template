@@ -19,4 +19,4 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP_NAME }}
         templateLocation: azuredeploy.json
-        parameters: azuredeploy-parameters.json
+        parameters: azuredeploy.parameters.json
