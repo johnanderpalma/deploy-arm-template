@@ -1,4 +1,4 @@
-name: deploy-arm-template
+name: deploy-arm-template-virtualmachine
 
 on:
   push:
@@ -6,14 +6,18 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  AZURE_RESOURCE_GROUP_NAME: azurebrains-rg
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
     - uses: whiteducksoftware/azure-arm-action@v3.2
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        resourceGroupName: azurebrains-rg
+        resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP_NAME }}
         templateLocation: azuredeploy.json
-        parameters: azuredeploy-parameters.json
+        parameters: azuredeploy.parameters.json
+        deploymentName: azurebrains-github-actions
