@@ -6,7 +6,7 @@
             "value": "Password54321"
         },
         "virtualMachineUserName": {
-            "value": "admin"
+            "value": "azurebrains"
         },
         "virtualMachineSku": {
             "value": "2012-R2-Datacenter"
