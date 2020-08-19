@@ -1,2 +1,3 @@
-# deploy-arm-template
-Example repo to deploy an ARM template to Azure
+# deploy-arm-template-virtualmachine
+
+Example repo to deploy a virtual machine on azure using an ARM template.
