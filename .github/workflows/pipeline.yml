@@ -1,10 +1,10 @@
-name: deploy-arm-template-virtualmachine
+name: deploy-arm-template
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 env:
   AZURE_RESOURCE_GROUP_NAME: azurebrains-rg
