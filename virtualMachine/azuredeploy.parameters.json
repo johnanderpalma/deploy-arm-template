@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "adminPassword": {
-            "value": "password54321"
+            "value": "Password54321"
         },
         "adminUserName": {
             "value": "azurebrains"
