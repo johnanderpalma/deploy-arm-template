@@ -21,3 +21,5 @@ jobs:
         templateLocation: virtualMachine/azuredeploy.json
         parameters: virtualMachine/azuredeploy.parameters.json
         deploymentName: azurebrains-github-actions
+        overrideParameters: |
+          adminPassword=${{ secrets.ADMIN_PASSWORD }}
