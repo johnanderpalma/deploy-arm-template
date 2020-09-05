@@ -2,13 +2,13 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "virtualMachineAdminPassword": {
-            "value": "Password54321"
+        "adminPassword": {
+            "value": "GEN-PASSWORD"
         },
-        "virtualMachineUserName": {
+        "adminUserName": {
             "value": "azurebrains"
         },
-        "virtualMachineSku": {
+        "windowsOsVersion": {
             "value": "2012-R2-Datacenter"
         },
         "virtualMachineName": {

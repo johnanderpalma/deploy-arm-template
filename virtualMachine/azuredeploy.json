@@ -2,17 +2,43 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "virtualMachineAdminPassword": {
-            "type": "string"
+        "adminPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Password for the Virtual Machine."
+            }
         },
-        "virtualMachineUserName": {
-            "type": "string"
+        "adminUserName": {
+            "type": "string",
+            "metadata": {
+                "description": "Username for the Virtual Machine."
+            }
         },
-        "virtualMachineSku": {
-            "type": "string"
+        "windowsOsVersion": {
+            "type": "string",
+            "defaultValue": "2016-Datacenter",
+            "allowedValues": [
+                "2008-R2-SP1",
+                "2012-Datacenter",
+                "2012-R2-Datacenter",
+                "2016-Nano-Server",
+                "2016-Datacenter-with-Containers",
+                "2016-Datacenter",
+                "2019-Datacenter"
+            ],
+            "metadata": {
+                "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version."
+            }
         },
         "virtualMachineName": {
             "type": "string"
+        },
+        "vmSize": {
+            "type": "string",
+            "defaultValue": "Standard_DS1_V2",
+            "metadata": {
+                "description": "Size of the virtual machine."
+            }
         }
     },
     "functions": [],
@@ -112,18 +138,18 @@
             },
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS1_V2"
+                    "vmSize": "[parameters('vmSize')]"
                 },
                 "osProfile": {
                     "computerName": "AzureBrains",
-                    "adminUsername": "[parameters('virtualMachineUserName')]",
-                    "adminPassword": "[parameters('virtualMachineAdminPassword')]"
+                    "adminUsername": "[parameters('adminUserName')]",
+                    "adminPassword": "[parameters('adminPassword')]"
                 },
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "MicrosoftWindowsServer",
                         "offer": "WindowsServer",
-                        "sku": "[parameters('virtualMachineSku')]",
+                        "sku": "[parameters('windowsOsVersion')]",
                         "version": "latest"
                     },
                     "osDisk": {
