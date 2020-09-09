@@ -17,6 +17,7 @@ If you are interested in Azure virtual machines, see:
 - [Azure Windows Virtual Machines documentation](https://docs.microsoft.com/azure/virtual-machines/windows/)
 - [Template reference](https://docs.microsoft.com/azure/templates/microsoft.compute/allversions)
 - [Quickstart templates](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular)
+- [Infrastructure As Code](https://martinfowler.com/bliki/InfrastructureAsCode.html)
 
 If you are interested in arm-template deployment, see:
 
